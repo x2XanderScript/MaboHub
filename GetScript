@@ -1,1 +1,28 @@
-Xxx
+
+--all-Script
+
+local mapIDs = {2753915549, 4442272183, 7449423635, 13772394625}
+
+local function loadScript(url)
+    local success, result = pcall(function()
+        return loadstring(game:HttpGet(url))()
+    end)
+    if not success then
+        warn("ไม่สามารถโหลดสคริปต์ได้:", result)
+        game.Players.LocalPlayer:Kick("ยังไม่ได้ทำสคริปแมพนี้คนสร้างนอนอ้วนอยู่")
+    end
+end
+
+if table.find(mapIDs, game.PlaceId) then
+    if game.PlaceId == 2753915549 then
+        loadstring(game:HttpGet("ลิ้งgithub"))()
+    elseif game.PlaceId == 4442272183 then
+        loadstring(game:HttpGet("ลิ้งgithub"))()
+    elseif game.PlaceId == 7449423635 then
+        loadstring(game:HttpGet("ลิ้งgithub"))()
+    elseif game.PlaceId == 13772394625 then --BladeBall
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/x2XanderScript/MaboHub/refs/heads/main/Mabo_bladeball.lua"))()
+    end
+else
+    game.Players.LocalPlayer:Kick("ยังไม่ได้ทำสคริปแมพนี้คนสร้างนอนอ้วนอยู่")
+end
